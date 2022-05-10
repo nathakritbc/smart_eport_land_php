@@ -1,6 +1,7 @@
 <?php 
-session_start();
-if(isset($_SESSION["id"])){ ?>
+// session_start();
+// if(isset($_SESSION["id"])){
+     ?>
 
 
 <!DOCTYPE html>
@@ -278,7 +279,7 @@ if (mysqli_num_rows($result) > 0) {
 </html>
 
 <?php 
-}else{
-  header("location:login.php");  
-}
+// }else{
+//   header("location:login.php");  
+// }
 ?>
