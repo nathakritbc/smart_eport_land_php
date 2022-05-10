@@ -152,7 +152,17 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+
+
+
                         <li class="nav-item">
+                            <a href="../pages/update_owner_land.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>การเปลี่ยนเจ้าของป้าย</p>
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>ผังบริเวณ</p>
@@ -181,7 +191,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>ผท. 123 รวม (Parcel)</p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li class="nav-header">บัญชีผู้ใช้</li>
