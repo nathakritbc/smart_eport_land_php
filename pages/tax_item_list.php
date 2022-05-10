@@ -74,7 +74,7 @@ if(isset($_SESSION["id"])){
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT luid,lid,lu_type FROM landused l";
+$sql = "SELECT luid,lid,lu_type FROM landused l Limit 20";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
