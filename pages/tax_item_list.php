@@ -88,7 +88,7 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td>
                                                     <a type="button"
                                                         href="http://127.0.0.1:85/property/land/<?=$row["lid"]?>"
-                                                        target="_back" class="btn btn-warning ml-2">action
+                                                        target="_back" class="btn btn-warning ml-2">เเสดง
                                                     </a>
                                                 </td>
                                             </tr>
