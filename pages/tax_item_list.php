@@ -84,7 +84,7 @@ if(isset($_SESSION["id"])){
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                                    <h3 class="ml-5 mt-4 text-primary"><?=$message?></h3>
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -108,7 +108,7 @@ if(isset($_SESSION["id"])){
 
                                         </div>
                                     </div>
-                                    <span class="ml-5 mt-4 text-primary"><?=$message?></span>
+
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- <h1 class="ml-5 mt-4 text-primary"></h1> -->
