@@ -53,7 +53,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="../pages/update_owner_land.php" class="nav-link">
+                    <a href="../pages/tax_item_list.php" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>
                             รายการชำระภาษี
