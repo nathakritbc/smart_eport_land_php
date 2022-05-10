@@ -69,11 +69,11 @@ if(isset($_SESSION["id"])){
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="#">1 : เกษตรกรรม</a>
                                             <a class="dropdown-item" href="#">2 : บ้านหลังหลัก 2(1)</a>
+                                            <a class="dropdown-item" href="#">6 : บ้าน 2(2)</a>
+                                            <a class="dropdown-item" href="#">7: บ้าน 2(3)</a>
                                             <a class="dropdown-item" href="#">3 : อื่นๆ</a>
                                             <a class="dropdown-item" href="#">4 : รกร้าง ว่างเปล่า</a>
                                             <a class="dropdown-item" href="#">5 : หลายประเภท</a>
-                                            <a class="dropdown-item" href="#">6 : บ้าน 2(2)</a>
-                                            <a class="dropdown-item" href="#">7: บ้าน 2(3)</a>
 
                                         </div>
                                     </div>
