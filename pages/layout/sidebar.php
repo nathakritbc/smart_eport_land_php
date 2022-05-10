@@ -52,15 +52,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="../pages/tax_item_list.php" class="nav-link">
-                        <i class="nav-icon fas fa-list"></i>
-                        <p>
-                            รายการชำระภาษี
-                            <!-- <span class="right badge badge-danger">New</span> -->
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-area"></i>
@@ -152,9 +144,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
-
-
                         <li class="nav-item">
                             <a href="../pages/update_owner_land.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -193,6 +182,15 @@
                             </a>
                         </li> -->
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/tax_item_list.php" class="nav-link">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>
+                            รายการการใช้ประโยชน์
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-header">บัญชีผู้ใช้</li>
                 <li class="nav-item">

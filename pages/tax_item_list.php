@@ -40,7 +40,7 @@ if(isset($_SESSION["id"])){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>รายการชำระภาษี</h1>
+                            <h1>การใช้ประโยชน์ <span class="ml-5 mt-4 text-primary"><?=$message?></span></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -84,7 +84,7 @@ if(isset($_SESSION["id"])){
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="ml-5 mt-4 text-primary"><?=$message?></h3>
+
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
