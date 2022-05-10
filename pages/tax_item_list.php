@@ -67,13 +67,14 @@ if(isset($_SESSION["id"])){
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
+                                                <th>L Id</th>
                                                 <th>Lu Type</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT luid,lu_type FROM landused l ";
+$sql = "SELECT luid,lid,lu_type FROM landused l";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -81,7 +82,12 @@ if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) { ?>
                                             <tr>
                                                 <td><?=$row["luid"]?></td>
+                                                <td><?=$row["lid"]?></td>
                                                 <td><?=$row["lu_type"]?></td>
+                                            </tr>
+                                            <tr>
+                                                <a type="button" href="www.google.com" target="_back"
+                                                    class="btn btn-warning ml-2">action <?=$row["lid"]?></a>
                                             </tr>
                                             <?php  
 }
