@@ -59,7 +59,7 @@ if(isset($_SESSION["id"])){
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                                    <h3 class="card-title">DataTable with default features</h3>
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
