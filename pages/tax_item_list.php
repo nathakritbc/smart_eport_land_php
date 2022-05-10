@@ -59,7 +59,7 @@ if(isset($_SESSION["id"])){
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">DataTable with default features</h3>
+                                    <!-- <h3 class="card-title">DataTable with default features</h3> -->
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -286,7 +286,7 @@ if (mysqli_num_rows($result) > 0) {
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "print"]
+            // "buttons": ["copy", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $('#example2').DataTable({
             "paging": true,
