@@ -108,7 +108,7 @@ if(isset($_SESSION["id"])){
 
                                         </div>
                                     </div>
-                                    <h3 class="ml-5 mt-4 text-primary"><?=$message?></h3>
+                                    <span class="ml-5 mt-4 text-primary"><?=$message?></span>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- <h1 class="ml-5 mt-4 text-primary"></h1> -->
