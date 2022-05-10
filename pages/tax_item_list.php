@@ -51,6 +51,31 @@ if(isset($_SESSION["id"])){
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
+            <?php 
+ $message="ทั้งหมด";
+ if(isset($_GET["lu_type"])){
+    $lu_type=$_GET["lu_type"];
+   if($lu_type == 1){
+    $message="1 : เกษตรกรรม";
+   }elseif ($lu_type == 2) {
+    $message="2 : บ้านหลังหลัก 2(1)";
+    }elseif ($lu_type == 3) {
+        $message="3 : อื่น ๆ";
+    }elseif ($lu_type == 4) {
+        $message="4 : รกร้าง";
+    }elseif ($lu_type == 5) {
+        $message="5 : หลายประเภท";
+    }elseif ($lu_type == 6) {
+        $message="6 : บ้าน 2(2)";
+    }elseif ($lu_type == 7) {
+        $message="7 : บ้าน 2(3)";
+    }else{
+        $message="ทั้งหมด";
+    }
+}
+ 
+ 
+ ?>
 
             <!-- Main content -->
             <section class="content">
@@ -73,8 +98,9 @@ if(isset($_SESSION["id"])){
                                                 2(1)</a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=6">6 : บ้าน
                                                 2(2)</a>
-                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=7">7: บ้าน 2(3)</a>
-                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=3">3 : อื่นๆ</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=7">7 : บ้าน
+                                                2(3)</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=3">3 : อื่น ๆ</a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=4">4 : รกร้าง
                                                 ว่างเปล่า</a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=5">5 :
@@ -83,7 +109,7 @@ if(isset($_SESSION["id"])){
                                     </div>
                                 </div>
                                 <!-- /.card-header -->
-                                <h1 class="ml-3 mt-3">1 : เกษตรกรรม</h1>
+                                <h1 class="ml-5 mt-4 text-primary"><?=$message?></h1>
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
