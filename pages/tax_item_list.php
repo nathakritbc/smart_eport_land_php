@@ -67,14 +67,18 @@ if(isset($_SESSION["id"])){
                                             ประเภทการใช้ประโยชน์ที่ดิน
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">1 : เกษตรกรรม</a>
-                                            <a class="dropdown-item" href="#">2 : บ้านหลังหลัก 2(1)</a>
-                                            <a class="dropdown-item" href="#">6 : บ้าน 2(2)</a>
-                                            <a class="dropdown-item" href="#">7: บ้าน 2(3)</a>
-                                            <a class="dropdown-item" href="#">3 : อื่นๆ</a>
-                                            <a class="dropdown-item" href="#">4 : รกร้าง ว่างเปล่า</a>
-                                            <a class="dropdown-item" href="#">5 : หลายประเภท</a>
-
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=1">1 :
+                                                เกษตรกรรม</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=2">2 : บ้านหลังหลัก
+                                                2(1)</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=6">6 : บ้าน
+                                                2(2)</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=7">7: บ้าน 2(3)</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=3">3 : อื่นๆ</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=4">4 : รกร้าง
+                                                ว่างเปล่า</a>
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=5">5 :
+                                                หลายประเภท</a>
                                         </div>
                                     </div>
                                 </div>
@@ -93,6 +97,10 @@ if(isset($_SESSION["id"])){
                                             <?php
                                             include_once "../configs/connect_db.php";
 $sql = "SELECT luid,lid,lu_type FROM landused l Limit 20";
+if(isset($_GET["lu_type"])){
+    $lu_type=$_GET["lu_type"];
+    $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type' Limit 20";
+}
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
