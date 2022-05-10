@@ -21,7 +21,7 @@
                             $a_password = password_hash($password, PASSWORD_DEFAULT);
                             
                             //คำสั่ง SQL สำหรับเพิ่มข้อมูลใน Database
-                            $sql = "UPDATE `admin` a SET   a_password='$a_password' WHERE id='$id';";
+                            $sql = "UPDATE `admin` a SET   pass_word='$a_password' WHERE uid='$id';";
 
                             if (mysqli_query($conn, $sql)) { 
                                                

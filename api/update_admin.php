@@ -21,8 +21,8 @@
                             $a_username = mysqli_real_escape_string($conn, $result['a_username']);
                             
                             //คำสั่ง SQL สำหรับเพิ่มข้อมูลใน Database
-                            $sql = "UPDATE `admin` a SET   a_full_name='$a_full_name' , a_username='$a_username' 
-                                    WHERE id='$id';";
+                            $sql = "UPDATE `user_table` a SET first_name='$a_full_name' , username='$a_username' 
+                                    WHERE uid='$id';";
 
                             if (mysqli_query($conn, $sql)) { 
                                             session_start();

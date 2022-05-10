@@ -16,18 +16,18 @@
                         $a_username = mysqli_real_escape_string($conn, $result['a_username']);
                         $password = mysqli_real_escape_string($conn, $result['a_password']); 
 
-                        $sql = "SELECT * FROM `admin` a WHERE a_username = '$a_username' LIMIT 1;";
+                        $sql = "SELECT * FROM `user_table` a WHERE username = '$a_username' LIMIT 1;";
                         $result = mysqli_query($conn, $sql); 
                          
                             if(mysqli_num_rows($result) > 0)  
                             {  
                                     while($row = mysqli_fetch_array($result))  
                                     {  
-                                        if(password_verify($password, $row["a_password"]))  
+                                        if(password_verify($password, $row["pass_word"]))  
                                         {  
                                             //return true; 
-                                            $_SESSION["id"] = $row["id"]; 
-                                            $_SESSION["a_full_name"] = $row["a_full_name"];  
+                                            $_SESSION["id"] = $row["uid"]; 
+                                            $_SESSION["a_full_name"] = $row["first_name"];  
                                             $_SESSION["a_username"] = $a_username;   
                                             // header("location:entry.php");  
                                             // echo "login success";

@@ -7,11 +7,11 @@
 
      //ตรวจสอบว่าเป็น Method GET หรือไม่
      if ($requestMethod == 'GET') {
-     $sql = "SELECT * FROM  `admin`;";
+     $sql = "SELECT * FROM  `user_table`;";
      //ตรวจสอบการส่งค่า id
      if (isset($_GET['id'])) { 
              $id = $_GET['id']; 
-             $sql = "SELECT * FROM `admin` WHERE id = '$id';";
+             $sql = "SELECT * FROM `user_table` WHERE uid = '$id';";
      } 
     $result = mysqli_query($conn, $sql);
      //สร้างตัวขึ้นมาเพื่อรอรับข้อมูล

@@ -15,15 +15,15 @@
      if ($requestMethod == 'POST') {
                         $a_full_name = mysqli_real_escape_string($conn, $result['a_full_name']);
                         $a_username = mysqli_real_escape_string($conn, $result['a_username']);
-                         $password = mysqli_real_escape_string($conn, $result['a_password']);
+                        $password = mysqli_real_escape_string($conn, $result['a_password']);
                         //  $hashed_password  = password_hash($password, PASSWORD_BCRYPT);
                         //  $a_password=$hashed_password;
                         // $a_password = md5($password);  
                         /* Secure password hash. */
                         $a_password = password_hash($password, PASSWORD_DEFAULT);
                         //คำสั่ง SQL สำหรับเพิ่มข้อมูลใน Database
-                        $sql = "INSERT INTO `admin` (`id`, `a_full_name`, `a_username`, `a_password`) 
-                                VALUES (NULL, '$a_full_name', '$a_username', '$a_password');";
+                        $sql = "INSERT INTO `user_table` (`uid`, `first_name`, `username`, `pass_word`,'role','u_status') 
+                                VALUES (NULL, '$a_full_name', '$a_username', '$a_password','100','0');";
 
                         if (mysqli_query($conn, $sql)) {
                                 echo json_encode([
