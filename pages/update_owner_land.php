@@ -254,7 +254,7 @@ if (mysqli_num_rows($result) > 0) {
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <!-- <script src="../dist/js/demo.js"></script> -->
-    <!-- Page specific script -->
+    <!-- Page specific script a -->
     <script>
     $(function() {
         $("#example1").DataTable({
