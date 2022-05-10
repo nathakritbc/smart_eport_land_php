@@ -67,9 +67,9 @@ if(isset($_SESSION["id"])){
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>L Id</th>
-                                                <th>Lu Type</th>
-                                                <th>Action</th>
+                                                <th>ลำดับที่ดิน</th>
+                                                <th>ประเภทการใช้ประโยชน์</th>
+                                                <th>#</th>
                                             </tr>
                                         </thead>
                                         <tbody>
