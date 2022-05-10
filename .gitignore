@@ -18,6 +18,7 @@ nbproject/private
 # Node / Bower
 node_modules/
 bower_components/
+ 
 
 # Plugins
 /plugins/**/*.html
