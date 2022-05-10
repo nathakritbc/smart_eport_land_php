@@ -69,6 +69,7 @@ if(isset($_SESSION["id"])){
                                                 <th>Id</th>
                                                 <th>L Id</th>
                                                 <th>Lu Type</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -84,11 +85,13 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["luid"]?></td>
                                                 <td><?=$row["lid"]?></td>
                                                 <td><?=$row["lu_type"]?></td>
+                                                <td>
+                                                    <a type="button" href="www.google.com" target="_back"
+                                                        class="btn btn-warning ml-2">action <?=$row["lid"]?>
+                                                    </a>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <a type="button" href="www.google.com" target="_back"
-                                                    class="btn btn-warning ml-2">action <?=$row["lid"]?></a>
-                                            </tr>
+
                                             <?php  
 }
 } else {
