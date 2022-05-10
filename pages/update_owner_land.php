@@ -10,7 +10,7 @@ if(isset($_SESSION["id"])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>เเก้ไขผู้ถือครองที่ดิน</title>
+    <title>การเปลี่ยนเจ้าของป้าย</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -40,7 +40,7 @@ if(isset($_SESSION["id"])){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>ข้อมูลผู้ถือครองที่ดิน</h1>
+                            <h1>การเปลี่ยนเจ้าของป้าย</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">

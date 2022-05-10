@@ -56,7 +56,7 @@
                     <a href="../pages/update_owner_land.php" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            เเก้ไขผู้ถือครองที่ดิน
+                            การเปลี่ยนเจ้าของป้าย
                             <!-- <span class="right badge badge-danger">New</span> -->
                         </p>
                     </a>
