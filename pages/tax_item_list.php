@@ -64,7 +64,7 @@ if(isset($_SESSION["id"])){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>การใช้ประโยชน์ <span class="ml-5 mt-4 text-primary"><?=$message?></span></h1>
+                            <h1>การใช้ประโยชน์ <span class="ml-3 mt-4 text-primary"><?=$message?></span></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -125,10 +125,10 @@ if(isset($_SESSION["id"])){
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT luid,lid,lu_type FROM landused l Limit 20";
+$sql = "SELECT luid,lid,lu_type FROM landused l";
 if(isset($_GET["lu_type"])){
     $lu_type=$_GET["lu_type"];
-    $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type' Limit 20";
+    $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type'";
 }
 $result = mysqli_query($conn, $sql);
 
