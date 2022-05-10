@@ -70,6 +70,7 @@ if(isset($_SESSION["id"])){
                                                 <th>Owner Id</th>
                                                 <th>ชื่อเจ้าของป้าย</th>
                                                 <th>ข้อความภายในป้าย</th>
+                                                <th>รหัสป้าย</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -88,6 +89,7 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["owner_id"]?></td>
                                                 <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
                                                 <td><?=$row["s_name"]?></td>
+                                                <td><?=$row["s_code"]?></td>
                                                 <td>
 
                                                     <button type="button" class="btn btn-warning ml-2"
