@@ -68,6 +68,7 @@ if(isset($_SESSION["id"])){
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Owner Id</th>
+                                                <th>ชื่อ</th>
                                                 <th>ข้อความภายในป้าย</th>
                                                 <th>Actions</th>
                                             </tr>
@@ -75,7 +76,8 @@ if(isset($_SESSION["id"])){
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT id,owner_id,annual,s_code,s_name FROM signboard";
+$sql = "SELECT id,owner_id,annual,s_code,s_name FROM signboard s 
+        JOIN owner o USING(owner_id);";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -84,6 +86,7 @@ if (mysqli_num_rows($result) > 0) {
                                             <tr>
                                                 <td><?=$row["id"]?></td>
                                                 <td><?=$row["owner_id"]?></td>
+                                                <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
                                                 <td><?=$row["s_name"]?></td>
                                                 <td>
 
