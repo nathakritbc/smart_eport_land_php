@@ -69,7 +69,7 @@ if(isset($_SESSION["id"])){
                                                 <th>Id</th>
                                                 <th>ลำดับที่ดิน</th>
                                                 <th>ประเภทการใช้ประโยชน์</th>
-                                                <th>#</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -88,7 +88,7 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td>
                                                     <a type="button"
                                                         href="http://127.0.0.1:85/property/land/<?=$row["lid"]?>"
-                                                        target="_back" class="btn btn-warning ml-2">เเสดง
+                                                        target="_back" class="btn btn-primary ml-2">เเสดง
                                                     </a>
                                                 </td>
                                             </tr>
