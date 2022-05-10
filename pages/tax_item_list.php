@@ -60,6 +60,18 @@ if(isset($_SESSION["id"])){
                             <div class="card">
                                 <div class="card-header">
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Dropdown button
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
