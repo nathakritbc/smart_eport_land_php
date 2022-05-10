@@ -1,8 +1,8 @@
 <?php 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "smart-report-land";
+$username = "sa";
+$password = "sa";
+$dbname = "ltax";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
