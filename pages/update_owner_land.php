@@ -68,7 +68,7 @@ if(isset($_SESSION["id"])){
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Owner Id</th>
-                                                <th>ชื่อ</th>
+                                                <th>ข้อความภายในป้าย</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
