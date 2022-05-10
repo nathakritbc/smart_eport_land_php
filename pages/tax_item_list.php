@@ -86,8 +86,9 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["lid"]?></td>
                                                 <td><?=$row["lu_type"]?></td>
                                                 <td>
-                                                    <a type="button" href="www.google.com" target="_back"
-                                                        class="btn btn-warning ml-2">action <?=$row["lid"]?>
+                                                    <a type="button"
+                                                        href="http://127.0.0.1:85/property/land/<?=$row["lid"]?>"
+                                                        target="_back" class="btn btn-warning ml-2">action
                                                     </a>
                                                 </td>
                                             </tr>
