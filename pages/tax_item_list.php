@@ -1,7 +1,31 @@
 <?php 
 session_start();
 if(isset($_SESSION["id"])){
-     ?>
+ 
+ $message="ทั้งหมด";
+ if(isset($_GET["lu_type"])){
+    $lu_type=$_GET["lu_type"];
+   if($lu_type == 1){
+    $message="1 : เกษตรกรรม";
+   }elseif ($lu_type == 2) {
+    $message="2 : บ้านหลังหลัก 2(1)";
+    }elseif ($lu_type == 3) {
+        $message="3 : อื่น ๆ";
+    }elseif ($lu_type == 4) {
+        $message="4 : รกร้าง";
+    }elseif ($lu_type == 5) {
+        $message="5 : หลายประเภท";
+    }elseif ($lu_type == 6) {
+        $message="6 : บ้าน 2(2)";
+    }elseif ($lu_type == 7) {
+        $message="7 : บ้าน 2(3)";
+    }else{
+        $message="ทั้งหมด";
+    }
+}
+ 
+ 
+ ?>
 
 
 <!DOCTYPE html>
@@ -51,31 +75,7 @@ if(isset($_SESSION["id"])){
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-            <?php 
- $message="ทั้งหมด";
- if(isset($_GET["lu_type"])){
-    $lu_type=$_GET["lu_type"];
-   if($lu_type == 1){
-    $message="1 : เกษตรกรรม";
-   }elseif ($lu_type == 2) {
-    $message="2 : บ้านหลังหลัก 2(1)";
-    }elseif ($lu_type == 3) {
-        $message="3 : อื่น ๆ";
-    }elseif ($lu_type == 4) {
-        $message="4 : รกร้าง";
-    }elseif ($lu_type == 5) {
-        $message="5 : หลายประเภท";
-    }elseif ($lu_type == 6) {
-        $message="6 : บ้าน 2(2)";
-    }elseif ($lu_type == 7) {
-        $message="7 : บ้าน 2(3)";
-    }else{
-        $message="ทั้งหมด";
-    }
-}
- 
- 
- ?>
+
 
             <!-- Main content -->
             <section class="content">
