@@ -10,7 +10,7 @@ if(isset($_SESSION["id"])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>การเปลี่ยนเจ้าของป้าย</title>
+    <title>รายการชำระภาษี</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -40,7 +40,7 @@ if(isset($_SESSION["id"])){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>การเปลี่ยนเจ้าของป้าย</h1>
+                            <h1>รายการชำระภาษี</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -67,36 +67,21 @@ if(isset($_SESSION["id"])){
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Owner Id</th>
-                                                <th>ชื่อเจ้าของป้าย</th>
-                                                <th>ข้อความภายในป้าย</th>
-                                                <th>รหัสป้าย</th>
-                                                <th>Actions</th>
+                                                <th>Lu Type</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT id,owner_id,annual,s_code,s_name,prefix,fname,lname FROM signboard s 
-        JOIN owner o USING(owner_id);";
+$sql = "SELECT luid,lu_type FROM landused l ";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) { ?>
                                             <tr>
-                                                <td><?=$row["id"]?></td>
-                                                <td><?=$row["owner_id"]?></td>
-                                                <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
-                                                <td><?=$row["s_name"]?></td>
-                                                <td><?=$row["s_code"]?></td>
-                                                <td>
-
-                                                    <button type="button" class="btn btn-warning ml-2"
-                                                        data-toggle="modal" data-target="#editOwnerLand"
-                                                        @click="getOwnerLandById('<?=$row["id"]?>')">เเก้ไข
-                                                    </button>
-                                                </td>
+                                                <td><?=$row["luid"]?></td>
+                                                <td><?=$row["lu_type"]?></td>
                                             </tr>
                                             <?php  
 }
