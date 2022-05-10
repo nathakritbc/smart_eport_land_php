@@ -22,8 +22,11 @@
                         /* Secure password hash. */
                         $a_password = password_hash($password, PASSWORD_DEFAULT);
                         //คำสั่ง SQL สำหรับเพิ่มข้อมูลใน Database
-                        $sql = "INSERT INTO `user_table` (`uid`, `first_name`, `username`, `pass_word`,'role','u_status') 
-                                VALUES (NULL, '$a_full_name', '$a_username', '$a_password','100','0');";
+                        // $sql = "INSERT INTO `user_table` (`uid`, `first_name`, `username`, `pass_word`,'role','u_status') 
+                        //         VALUES (NULL, '$a_full_name', '$a_username', '$a_password','100','0');";
+
+                        $sql ="INSERT INTO `user_table` (`uid`, `username`, `pass_word`, `first_name`, `last_name`, `user_type_id`, `role`, `u_status`, `token`) 
+                               VALUES (NULL, '$a_username', '$a_password', '$a_full_name', '', NULL, NULL, NULL, NULL);";
 
                         if (mysqli_query($conn, $sql)) {
                                 echo json_encode([
