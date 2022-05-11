@@ -140,7 +140,7 @@ if(isset($_SESSION["id"])){
 
 
                                 </div>
-                                <!-- /.card-header -->
+                                <!-- /.card-header   -->
                                 <!-- <h1 class="ml-5 mt-4 text-primary"></h1> -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
