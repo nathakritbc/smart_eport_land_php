@@ -1,4 +1,14 @@
 <?php 
+
+// dev
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "smart-report-land";
+// $db_port="3306";
+
+
+// production
 $servername = "localhost";
 $username = "sa";
 $password = "sa";

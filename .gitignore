@@ -15,10 +15,11 @@ nbproject/private
 .vscode/
 .vs/
 
+
 # Node / Bower
 node_modules/
 bower_components/
- 
+
 
 # Plugins
 /plugins/**/*.html
@@ -70,3 +71,5 @@ TODO
 test.html
 ad.js
 /.cache/
+configs/connect_db.php
+configs/connect_db.php
