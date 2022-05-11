@@ -62,9 +62,9 @@ if(isset($_SESSION["id"])){
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
                                     <form @submit.prevent="submitFormReport">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">รายงาน ผท. 1</label>
+                                            <label for="exampleInputEmail1">รายงาน ภ.ป.1</label>
                                             <input type="text" required v-model.trim="textReport" class="form-control"
-                                                placeholder="รายงาน ผท. 1">
+                                                placeholder="รายงาน ภ.ป.1">
                                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
                                                 email with anyone else.</small> -->
                                         </div>
