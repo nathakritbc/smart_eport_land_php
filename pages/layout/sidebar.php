@@ -69,9 +69,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="../pages/floor_plan_pt1.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>ผท. 1(LTax)</p>
+                                <p>รายงาน ผท. 1</p>
                             </a>
                         </li>
                         <li class="nav-item">
