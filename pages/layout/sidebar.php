@@ -74,7 +74,7 @@
                                 <p>รายงาน ผท. 1</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>ผท. 1(Parcel)</p>
@@ -91,7 +91,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>ผท. 123 รวม (Parcel)</p>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li class="nav-item">
