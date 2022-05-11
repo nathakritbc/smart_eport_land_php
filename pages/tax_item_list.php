@@ -173,17 +173,7 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["luid"]?></td>
                                                 <td><?=$row["lid"]?></td>
                                                 <td>
-                                                    <?php 
-                                                        // if($row["lu_type"] == 3){
-                                                        //     echo "3 : อื่น ๆ";
-                                                        // }elseif($message == "ทั้งหมด"){
-                                                        //     echo $message;
-                                                        // }else  {
-                                                        //     echo $message;
-                                                        // }
-
-                                                        // echo $message;
-                                                        echo $row["lu_type"]; 
+                                                    <?php   
                                                             $luType = $row["lu_type"];
                                                             $msg="";
                                                          if($luType == 1){
