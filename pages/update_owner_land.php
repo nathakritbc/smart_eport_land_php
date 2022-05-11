@@ -94,7 +94,7 @@ if (mysqli_num_rows($result) > 0) {
 
                                                     <button type="button" class="btn btn-warning ml-2"
                                                         data-toggle="modal" data-target="#editOwnerLand"
-                                                        @click="getOwnerLandById('<?=$row["id"]?>')">เเก้ไข
+                                                        @click="getOwnerLandById('<?=$row["id"]?>')">โอน
                                                     </button>
                                                 </td>
                                             </tr>
