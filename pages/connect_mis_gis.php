@@ -2,9 +2,9 @@
 session_start();
 if(isset($_SESSION["id"])){
 
-        $sql = "SELECT lid,parcel_code,dno,ln,sc,sn,rw,moo,r,y,w,price,l_type,annual  FROM land l LIMIT 100 ;";
+        $sql = "SELECT lid,parcel_old,dno,ln,sc,sn,rw,moo,r,y,w,price,l_type,annual  FROM land l LIMIT 100 ;";
     if(isset($_GET["all"])){ 
-        $sql = "SELECT lid,parcel_code,dno,ln,sc,sn,rw,moo,r,y,w,price,l_type,annual  FROM land l  ;";
+        $sql = "SELECT lid,parcel_old,dno,ln,sc,sn,rw,moo,r,y,w,price,l_type,annual  FROM land l  ;";
     }
 
      ?>
@@ -87,7 +87,7 @@ if(isset($_SESSION["id"])){
                                         <thead>
                                             <tr>
                                                 <th>Lid</th>
-                                                <th>Parcel Code</th>
+                                                <th>Parcel Old</th>
                                                 <th>DNO</th>
                                                 <th>Ln</th>
                                                 <th>SC</th>
@@ -113,7 +113,7 @@ if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) { ?>
                                             <tr>
                                                 <td><?=$row["lid"]?></td>
-                                                <td><?=$row["parcel_code"]?></td>
+                                                <td><?=$row["parcel_old"]?></td>
                                                 <td><?=$row["dno"]?></td>
                                                 <td><?=$row["ln"]?></td>
                                                 <td><?=$row["sc"]?></td>
