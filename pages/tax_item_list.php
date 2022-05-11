@@ -3,9 +3,13 @@ session_start();
 if(isset($_SESSION["id"])){
  
  $message="ทั้งหมด";
+ $lu_type;
  if(isset($_GET["lu_type"])){
     $lu_type=$_GET["lu_type"];
-   if($lu_type == 1){
+ if ($lu_type == 0) {
+    $message="ทั้งหมด";
+    }
+   elseif($lu_type == 1){
     $message="1 : เกษตรกรรม";
    }elseif ($lu_type == 2) {
     $message="2 : บ้านหลังหลัก 2(1)";
@@ -92,8 +96,12 @@ if(isset($_SESSION["id"])){
                                             ประเภทการใช้ประโยชน์ที่ดิน
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="tax_item_list.php?lu_type=0">1 :
+                                                ทั้งหมด
+                                            </a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=1">1 :
-                                                เกษตรกรรม</a>
+                                                เกษตรกรรม
+                                            </a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=2">2 : บ้านหลังหลัก
                                                 2(1)</a>
                                             <a class="dropdown-item" href="tax_item_list.php?lu_type=6">6 : บ้าน
@@ -128,7 +136,11 @@ if(isset($_SESSION["id"])){
 $sql = "SELECT luid,lid,lu_type FROM landused l";
 if(isset($_GET["lu_type"])){
     $lu_type=$_GET["lu_type"];
-    $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type'";
+    if($lu_type != 0){
+      $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type'";
+    }
+      
+
 }
 $result = mysqli_query($conn, $sql);
 
@@ -138,7 +150,16 @@ if (mysqli_num_rows($result) > 0) {
                                             <tr>
                                                 <td><?=$row["luid"]?></td>
                                                 <td><?=$row["lid"]?></td>
-                                                <td><?=$row["lu_type"]?></td>
+                                                <td>
+                                                    <?php 
+                                                        if($row["lu_type"] == 3){
+                                                            echo "3 : อื่น ๆ";
+                                                        }else{
+                                                            echo $message;
+                                                        }
+                                                          
+                                                    ?>
+                                                </td>
                                                 <td>
                                                     <a type="button"
                                                         href="http://127.0.0.1:85/property/land/<?=$row["lid"]?>"
