@@ -126,7 +126,7 @@ if(isset($_SESSION["id"])){ ?>
                 } = this.payload
                 // console.log('searchText', searchText);
                 // window.location.href =   `http://localhost:88/smart_lt4/ptx_print.php?no_date=1&s=${searchText}`;
-                window.open(`http://localhost:88/smart_lt4/ptx_print.php?no_date=1&s=${searchText}`,
+                window.open(`http://localhost:88/smart_lt4/pt1n2_print.php?no_date=1&s=${searchText}`,
                     '_blank');
             }
         }
