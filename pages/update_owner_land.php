@@ -60,6 +60,16 @@ if(isset($_SESSION["id"])){
                             <div class="card">
                                 <div class="card-header">
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                                    <form @submit.prevent="submitFormReport">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">รายงาน ผท. 1</label>
+                                            <input type="text" required v-model.trim="textReport" class="form-control"
+                                                placeholder="รายงาน ผท. 1">
+                                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                                email with anyone else.</small> -->
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">พิมพ์</button>
+                                    </form>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -98,11 +108,6 @@ if (mysqli_num_rows($result) > 0) {
                                                         data-toggle="modal" data-target="#editOwnerLand"
                                                         @click="getOwnerLandById('<?=$row["id"]?>')">โอน
                                                     </button>
-                                                    <!-- <button type="button" class="btn btn-success ml-2"
-                                                        data-toggle="modal" data-target="#reportOwnerLand"
-                                                        @click="getNameOwnerLand('<?=$row["fname"]?>')">
-                                                        รายงาน
-                                                    </button> -->
                                                     <a type="button" class="btn btn-success ml-2" target="_back"
                                                         href="http://localhost:88/smart_lt4/pp1_print.php?&ud=&oid=<?=$row["owner_id"]?>">รายงาน</a>
                                                 </td>
@@ -174,31 +179,7 @@ if (mysqli_num_rows($result) > 0) {
             </div>
         </div>
 
-        <div class="modal fade" id="reportOwnerLand" tabindex="-1" aria-labelledby="reportOwnerLandLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form @submit.prevent="submitFormReport">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="reportOwnerLandLabel">รายงาน</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="">ตัวอักษร</label>
-                                <input type="text" v-model.trim="textReport" required class="form-control" id="">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                            <button type="submit" class="btn btn-primary">พิมพ์</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+
 
 
 
@@ -231,12 +212,6 @@ if (mysqli_num_rows($result) > 0) {
         },
         methods: {
 
-            getNameOwnerLand(param) {
-                this.textReport = param.trim()
-                console.log('param', param);
-                console.log('this.textReport', this.textReport);
-
-            },
             submitFormReport() {
                 window.open(`http://localhost:88/smart_lt4/pp1_print.php?s=${this.textReport}`, '_blank');
             },
