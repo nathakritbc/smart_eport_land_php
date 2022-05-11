@@ -62,7 +62,8 @@ if(isset($_SESSION["id"])){
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
                                     <form @submit.prevent="submitFormReport">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">รายงาน ภ.ป.1</label>
+                                            <label for="exampleInputEmail1">รายงาน ภ.ป.1
+                                                (ใส่พยัญชนะเเรกของชื่อเจ้าของป้าย)</label>
                                             <input type="text" required v-model.trim="textReport" class="form-control"
                                                 placeholder="รายงาน ภ.ป.1">
                                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
@@ -96,7 +97,7 @@ if (mysqli_num_rows($result) > 0) {
                                             <tr>
                                                 <td><?=$row["id"]?></td>
                                                 <td><?=$row["owner_id"]?></td>
-                                                <td><?=$row["prefix"]?><?=$row["fname"]?><?=$row["lname"]?></td>
+                                                <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
                                                 <td><?=$row["s_name"]?></td>
                                                 <td><?=$row["s_code"]?></td>
                                                 <td>
