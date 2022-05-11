@@ -182,7 +182,8 @@ if (mysqli_num_rows($result) > 0) {
                                                         //     echo $message;
                                                         // }
 
-                                                        echo $message;
+                                                        // echo $message;
+                                                        echo $row["lu_type"];
                                                           
                                                     ?>
                                                 </td>
