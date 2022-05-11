@@ -77,8 +77,7 @@ if(isset($_SESSION["id"])){
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT id,owner_id,annual,s_code,s_name,prefix,fname,lname FROM signboard s 
-        JOIN owner o USING(owner_id);";
+$sql = "SELECT id,owner_id,annual,s_code,s_name,prefix,fname,lname FROM signboard s JOIN owner o USING(owner_id);";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -98,6 +97,10 @@ if (mysqli_num_rows($result) > 0) {
                                                     <button type="button" class="btn btn-warning ml-2"
                                                         data-toggle="modal" data-target="#editOwnerLand"
                                                         @click="getOwnerLandById('<?=$row["id"]?>')">โอน
+                                                    </button>
+                                                    <button type="button" class="btn btn-success ml-2"
+                                                        data-toggle="modal" data-target="#reportOwnerLand"
+                                                        @click="getNameOwnerLand('<?=$row["fname"]?>')">รายงาน
                                                     </button>
                                                 </td>
                                             </tr>
@@ -168,6 +171,32 @@ if (mysqli_num_rows($result) > 0) {
             </div>
         </div>
 
+        <div class="modal fade" id="reportOwnerLand" tabindex="-1" aria-labelledby="reportOwnerLandLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form @submit.prevent="submitFormReport">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="reportOwnerLandLabel">รายงาน</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="">ตัวอักษร</label>
+                                <input type="text" v-model.trim="textReport" required class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                            <button type="submit" class="btn btn-primary">พิมพ์</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
 
     </div>
@@ -186,6 +215,7 @@ if (mysqli_num_rows($result) > 0) {
         data() {
             return {
                 message: 'Hello Vue!',
+                textReport: "",
                 payload: {
                     id: 0,
                     owner_id: '',
@@ -197,6 +227,16 @@ if (mysqli_num_rows($result) > 0) {
             }
         },
         methods: {
+
+            getNameOwnerLand(param) {
+                this.textReport = param.trim()
+                console.log('param', param);
+                console.log('this.textReport', this.textReport);
+
+            },
+            submitFormReport() {
+                window.open(`http://localhost:88/smart_lt4/pp1_print.php?s=${this.textReport}`, '_blank');
+            },
             async getOwnerLandById(id) {
                 try {
                     const {
