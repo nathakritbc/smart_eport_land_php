@@ -1,3 +1,16 @@
+<?php
+
+   include_once "../configs/connect_db.php";
+
+$sql = "SELECT m_name FROM municipal";
+$result = mysqli_query($conn, $sql);
+
+ $row = mysqli_fetch_assoc($result);
+ 
+  
+
+?>
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -8,7 +21,8 @@
             <a href="../pages/update_owner_land.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link text-danger">องค์การบริหารส่วนตำบลท่าจำปา</a>
+            <!-- <a href="#" class="nav-link text-danger">องค์การบริหารส่วนตำบลท่าจำปา</a> -->
+            <a href="#" class="nav-link text-danger"><?=$row["m_name"];?></a>
         </li>
     </ul>
 </nav>
