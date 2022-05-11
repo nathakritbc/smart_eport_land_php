@@ -198,6 +198,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="../pages/connect_mis_gis.php" class="nav-link">
+                        <i class="nav-icon fas fa-link"></i>
+                        <p>
+                            ข้อมูลเชื่อม Mis กับ Gis
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">บัญชีผู้ใช้</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
