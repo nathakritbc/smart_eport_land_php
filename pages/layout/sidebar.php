@@ -7,9 +7,10 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="../pages/update_owner_land.php" class="nav-link">Home</a>
         </li>
-
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link text-danger">องค์การบริหารส่วนตำบลท่าจำปา</a>
+        </li>
     </ul>
-
 </nav>
 <!-- /.navbar -->
 
