@@ -296,7 +296,16 @@ if (mysqli_num_rows($result) > 0) {
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "print"]
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis", {
+                extend: 'csv',
+                text: 'Export csv',
+                charset: 'utf-8',
+                extension: '.csv',
+                fieldSeparator: ';',
+                fieldBoundary: '',
+                filename: 'export',
+                bom: true
+            }, ],
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $('#example2').DataTable({
             "paging": true,
