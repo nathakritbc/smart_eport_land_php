@@ -71,7 +71,7 @@ if(isset($_SESSION["id"])){
                                                 <th>ชื่อเจ้าของป้าย</th>
                                                 <th>ข้อความภายในป้าย</th>
                                                 <th>รหัสป้าย</th>
-                                                <th>Actions</th>
+                                                <th>เปลี่ยนเจ้าของ</th>
                                             </tr>
                                         </thead>
                                         <tbody>
