@@ -64,50 +64,16 @@ if(isset($_SESSION["id"])){ ?>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>โซน</th>
-                                                <th>จำนวนเเปลง</th>
-                                                <th>พิมพ์</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            include_once "../configs/connect_db.php";
-$sql = "SELECT id,owner_id,annual,s_code,s_name FROM signboard";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) { ?>
-                                            <tr>
-                                                <td><?=$row["id"]?></td>
-                                                <td><?=$row["owner_id"]?></td>
-                                                <td><?=$row["s_name"]?></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-primary">
-                                                        <a href="#" class="text-white">ปกติ
-                                                        </a>
-                                                    </button>
-                                                    <button type="button" class="btn btn-success ml-2">
-                                                        <a href="#" class="text-white">ไม่เอาภาพดาวเทียม
-                                                        </a>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <?php  
-}
-} else {
-  echo "<tr>ไม่พบข้อมูล</tr>";
-}
-
-                                            ?>
-
-                                        </tbody>
-
-                                    </table>
+                                    <form @submit.prevent="submitForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">พิมพ์ผังบริเวณ</label>
+                                            <input type="text" v-model.trim="payload.searchText" class="form-control"
+                                                placeholder="พิมพ์ผังบริเวณ">
+                                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                                email with anyone else.</small> -->
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">พิมพ์</button>
+                                    </form>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -131,39 +97,6 @@ if (mysqli_num_rows($result) > 0) {
         <!-- /.control-sidebar -->
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="editOwnerLand" tabindex="-1" aria-labelledby="editOwnerLandLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form @submit.prevent="submitForm">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editOwnerLandLabel">เเก้ไขรหัสผู้ครอบครองที่ดิน (Owner Id)</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="">รหัส Owner Id เดิม</label>
-                                <input type="number" v-model.trim="payload.owner_id" required class="form-control"
-                                    id="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">รหัส Owner Id ใหม่</label>
-                                <input type="number" v-model.trim="payload.new_owner_id" required class="form-control"
-                                    id="">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                            <button type="submit" class="btn btn-warning">เเก้ไข</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
 
 
     </div>
@@ -181,56 +114,20 @@ if (mysqli_num_rows($result) > 0) {
         },
         data() {
             return {
-                message: 'Hello Vue!',
                 payload: {
-                    id: 0,
-                    owner_id: '',
-                    annual: '',
-                    s_code: '',
-                    s_name: '',
-                    new_owner_id: ''
+                    searchText: ''
                 }
             }
         },
         methods: {
-            async getOwnerLandById(id) {
-                try {
-                    const {
-                        data
-                    } = await axios.get(`../api/owner_land.php?id=${id}`)
-                    const result = data[0]
-                    // console.log('result', result);
-                    this.payload = data[0]
-                } catch (error) {
-                    console.error(error);
-                }
-            },
             async submitForm() {
-                try {
-
-                    const params = {
-                        ...this.payload,
-                        owner_id: this.payload.new_owner_id
-                    }
-                    // console.log('params', params);
-                    const {
-                        data
-                    } = await axios.post(`../api/update_signboard.php`, params)
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'เเก้ไขข้อมูลสำเร็จ',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(() => location = 'update_owner_land.php')
-                } catch (error) {
-                    console.error(error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'เเก้ไขข้อมูลไม่สำเร็จ',
-                        text: 'โปรดตรวจสอบความถูกต้องของข้อมูล!',
-                    })
-                }
+                const {
+                    searchText
+                } = this.payload
+                // console.log('searchText', searchText);
+                // window.location.href =   `http://localhost:88/smart_lt4/ptx_print.php?no_date=1&s=${searchText}`;
+                window.open(`http://localhost:88/smart_lt4/ptx_print.php?no_date=1&s=${searchText}`,
+                    '_blank');
             }
         }
     }).mount('#app')
