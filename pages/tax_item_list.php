@@ -174,11 +174,15 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["lid"]?></td>
                                                 <td>
                                                     <?php 
-                                                        if($row["lu_type"] == 3){
-                                                            echo "3 : อื่น ๆ";
-                                                        }else{
-                                                            echo $message;
-                                                        }
+                                                        // if($row["lu_type"] == 3){
+                                                        //     echo "3 : อื่น ๆ";
+                                                        // }elseif($message == "ทั้งหมด"){
+                                                        //     echo $message;
+                                                        // }else  {
+                                                        //     echo $message;
+                                                        // }
+
+                                                        echo $message;
                                                           
                                                     ?>
                                                 </td>
