@@ -183,7 +183,25 @@ if (mysqli_num_rows($result) > 0) {
                                                         // }
 
                                                         // echo $message;
-                                                        echo $row["lu_type"];
+                                                        echo $row["lu_type"]; 
+                                                            $luType = $row["lu_type"];
+                                                            $msg="";
+                                                         if($luType == 1){
+                                                            $msg="1 : เกษตรกรรม";
+                                                        }elseif ($luType == 2) {
+                                                            $msg="2 : บ้านหลังหลัก 2(1)";
+                                                            }elseif ($luType == 3) {
+                                                                $msg="3 : อื่น ๆ";
+                                                            }elseif ($luType == 4) {
+                                                                $msg="4 : รกร้าง";
+                                                            }elseif ($luType == 5) {
+                                                                $msg="5 : หลายประเภท";
+                                                            }elseif ($luType == 6) {
+                                                                $msg="6 : บ้าน 2(2)";
+                                                            }elseif ($luType == 7) {
+                                                                $msg="7 : บ้าน 2(3)";
+                                                            } 
+                                                            echo $msg;
                                                           
                                                     ?>
                                                 </td>
