@@ -139,7 +139,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="modal-content">
                     <form @submit.prevent="submitForm">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="editOwnerLandLabel">เเก้ไขรหัสผู้ครอบครองที่ดิน (Owner Id)</h5>
+                            <h5 class="modal-title" id="editOwnerLandLabel">เปลี่ยนเจ้าของ</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
