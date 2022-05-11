@@ -86,7 +86,7 @@ if (mysqli_num_rows($result) > 0) {
                                             <tr>
                                                 <td><?=$row["id"]?></td>
                                                 <td><?=$row["owner_id"]?></td>
-                                                <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
+                                                <td><?=$row["prefix"]?><?=$row["fname"]?><?=$row["lname"]?></td>
                                                 <td><?=$row["s_name"]?></td>
                                                 <td><?=$row["s_code"]?></td>
                                                 <td>
@@ -100,7 +100,8 @@ if (mysqli_num_rows($result) > 0) {
                                                     </button>
                                                     <button type="button" class="btn btn-success ml-2"
                                                         data-toggle="modal" data-target="#reportOwnerLand"
-                                                        @click="getNameOwnerLand('<?=$row["fname"]?>')">รายงาน
+                                                        @click="getNameOwnerLand('<?=$row["fname"]?>')">
+                                                        รายงาน
                                                     </button>
                                                 </td>
                                             </tr>
@@ -185,7 +186,7 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="">ตัวอักษร</label>
-                                <input type="text" v-model.trim="textReport" required class="form-control" id="">
+                                <input type="text" v-model.trim="oid" required class="form-control" id="">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -215,7 +216,7 @@ if (mysqli_num_rows($result) > 0) {
         data() {
             return {
                 message: 'Hello Vue!',
-                textReport: "",
+                oid: "",
                 payload: {
                     id: 0,
                     owner_id: '',
@@ -229,13 +230,14 @@ if (mysqli_num_rows($result) > 0) {
         methods: {
 
             getNameOwnerLand(param) {
-                this.textReport = param.trim()
+                this.oid = param.trim()
                 console.log('param', param);
-                console.log('this.textReport', this.textReport);
-
+                console.log('this.oid', this.oid);
             },
             submitFormReport() {
-                window.open(`http://localhost:88/smart_lt4/pp1_print.php?s=${this.textReport}`, '_blank');
+                // window.open(`http://localhost:88/smart_lt4/pp1_print.php?s=${this.oid}`, '_blank');
+                window.open(`http://localhost:88/smart_lt4/pp1_print.php?&ud=&oid=${this.oid}`, '_blank');
+
             },
             async getOwnerLandById(id) {
                 try {
