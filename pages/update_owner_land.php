@@ -91,7 +91,10 @@ if (mysqli_num_rows($result) > 0) {
                                                 <td><?=$row["s_name"]?></td>
                                                 <td><?=$row["s_code"]?></td>
                                                 <td>
-
+                                                    <a type="button" class="btn btn-primary"
+                                                        href="http://127.0.0.1:85/property/sign/<?=$row["id"]?>"
+                                                        target="_back">ตรวจสอบข้อมูล
+                                                    </a>
                                                     <button type="button" class="btn btn-warning ml-2"
                                                         data-toggle="modal" data-target="#editOwnerLand"
                                                         @click="getOwnerLandById('<?=$row["id"]?>')">โอน
