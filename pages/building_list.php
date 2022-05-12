@@ -133,7 +133,7 @@ if (mysqli_num_rows($result) > 0) {
 
                                                 <td>
                                                     <a type="button" class="btn btn-primary"
-                                                        href="http://127.0.0.1:85/property/sign/<?=$row["id"]?>"
+                                                        href="http://127.0.0.1:85/property/building/<?=$row["bid"]?>"
                                                         target="_back">ตรวจสอบข้อมูล
                                                     </a>
                                                 </td>
