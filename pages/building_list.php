@@ -109,7 +109,8 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                         </div>
 
                                         <div class="col mt-1 text-right">
-                                            <h5>รามทั้งหมด <span class="text-danger"><?=$data_row;?></span></h5>
+                                            <h5>จำนวนสิ่งปลูกสร้าง <span class="text-danger"><?=$data_row;?></span> หลัง
+                                            </h5>
                                         </div>
 
                                     </div>
