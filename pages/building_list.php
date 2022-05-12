@@ -131,12 +131,7 @@ if (mysqli_num_rows($result) > 0) {
                                                         href="http://127.0.0.1:85/property/sign/<?=$row["id"]?>"
                                                         target="_back">ตรวจสอบข้อมูล
                                                     </a>
-                                                    <button type="button" class="btn btn-warning ml-2"
-                                                        data-toggle="modal" data-target="#editOwnerLand"
-                                                        @click="getOwnerLandById('<?=$row["id"]?>')">โอน
-                                                    </button>
-                                                    <a type="button" class="btn btn-success ml-2" target="_back"
-                                                        href="http://localhost:88/smart_lt4/pp1_print.php?&ud=&oid=<?=$row["owner_id"]?>">รายงาน</a>
+
                                                 </td>
                                             </tr>
                                             <?php  
