@@ -1,19 +1,19 @@
 <?php 
 
 // dev
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "smart-report-land";
-$db_port="3306";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "smart-report-land";
+// $db_port="3306";
 
 
 // production
-// $servername = "localhost";
-// $username = "sa";
-// $password = "sa";
-// $dbname = "ltax";
-// $db_port="3304";
+$servername = "localhost";
+$username = "sa";
+$password = "sa";
+$dbname = "ltax";
+$db_port="3304";
 
 
 // Create connection
