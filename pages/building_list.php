@@ -81,19 +81,17 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
 
                                     </div>
 
-                                    <div class="row mt-3">
+                                    <!-- <div class="row mt-3">
                                         <form @submit.prevent="submitFormReport">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">รายงาน ภ.ป.1
                                                     (ใส่พยัญชนะเเรกของชื่อเจ้าของป้าย)</label>
                                                 <input type="text" required v-model.trim="textReport"
                                                     class="form-control" placeholder="รายงาน ภ.ป.1">
-                                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                                email with anyone else.</small>  -->
                                             </div>
                                             <button type="submit" class="btn btn-primary">พิมพ์</button>
                                         </form>
-                                    </div>
+                                    </div> -->
 
                                 </div>
                                 <!-- /.card-header -->
