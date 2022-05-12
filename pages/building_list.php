@@ -8,7 +8,7 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
     if(isset($_GET["moo"])){
         $moo=$_GET["moo"];
         $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
-        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id AND b.moo=1 LIMIT 100;";
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id AND b.moo='$moo' ;";
     }
 
     if(isset($_GET["all"])){ 
@@ -16,11 +16,7 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
         FROM building b JOIN owner ow WHERE b.oid = ow.owner_id;";
     }
 
-        if(isset($_GET["all"]) AND isset($_GET["moo"])){ 
-        $moo=$_GET["moo"];
-        $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
-        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id AND b.moo=1;";
-    }
+ 
 
      ?>
 
