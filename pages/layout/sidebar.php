@@ -1,11 +1,6 @@
 <?php
 
-   include_once "../configs/connect_db.php";
-
-$sql = "SELECT m_name FROM municipal";
-$result = mysqli_query($conn, $sql);
-
- $row = mysqli_fetch_assoc($result);
+ @session_start();
  
   
 
@@ -22,7 +17,7 @@ $result = mysqli_query($conn, $sql);
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <!-- <a href="#" class="nav-link text-danger">องค์การบริหารส่วนตำบลท่าจำปา</a> -->
-            <a href="#" class="nav-link text-danger"><?=$row["m_name"];?></a>
+            <a href="#" class="nav-link text-danger"><?=$_SESSION["m_name"];?></a>
         </li>
     </ul>
 </nav>

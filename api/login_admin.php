@@ -18,6 +18,11 @@
 
                         $sql = "SELECT * FROM `user_table` a WHERE username = '$a_username' LIMIT 1;";
                         $result = mysqli_query($conn, $sql); 
+
+                        $sql_municipal = "SELECT m_name FROM municipal";
+                        $result_municipal = mysqli_query($conn, $sql_municipal);
+
+                        $row_municipal = mysqli_fetch_assoc($result_municipal);
                          
                             if(mysqli_num_rows($result) > 0)  
                             {  
@@ -29,6 +34,7 @@
                                             $_SESSION["id"] = $row["uid"]; 
                                             $_SESSION["a_full_name"] = $row["first_name"];  
                                             $_SESSION["a_username"] = $a_username;   
+                                            $_SESSION["m_name"] = $row_municipal["m_name"]; 
                                             // header("location:entry.php");  
                                             // echo "login success";
                                             echo json_encode([
