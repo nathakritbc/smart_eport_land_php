@@ -63,38 +63,6 @@ if(isset($_SESSION["id"])){
 
                                     <div class="row" style="width: 460px;">
                                         <div class="col">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    ประเภทการใช้ประโยชน์ที่ดิน
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=0">1 :
-                                                        ทั้งหมด
-                                                    </a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=1">1 :
-                                                        เกษตรกรรม
-                                                    </a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=2">2 :
-                                                        บ้านหลังหลัก
-                                                        2(1)</a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=6">6 : บ้าน
-                                                        2(2)</a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=7">7 : บ้าน
-                                                        2(3)</a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=3">3 : อื่น
-                                                        ๆ</a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=4">4 :
-                                                        รกร้าง
-                                                        ว่างเปล่า</a>
-                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=5">5 :
-                                                        หลายประเภท</a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col">
                                             <a type="button" href="./tax_item_list.php" class="btn btn-primary">100
                                                 ข้อมูล</a>
                                         </div>
