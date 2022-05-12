@@ -33,59 +33,26 @@ if(isset($_SESSION["id"])){ ?>
 
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>ข้อมูลผังบริเวณ</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">DataTables</li>
-                            </ol>
-                        </div>
+        <div class="content-wrapper text-center text-white" style="background-image: url('../dist/img/pexels-luis-del-río-15286.jpg'); background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center; opacity: 0.5; linear-gradient(black, black);">
+            <div class="cover-container d-flex h-100 p-3 mx-auto flex-column ">
+                <main role="main" class="inner cover">
+                    <h1 class="cover-heading" style="margin-top: 9rem;"><?=$_SESSION["m_name"];?></h1>
+                    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download,
+                        edit the text, and add your own fullscreen background photo to make it your own.</p>
+                    <p class="lead">
+                        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+                    </p>
+                </main>
+
+                <footer class="mastfoot mt-auto">
+                    <div class="inner">
+                        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                                href="https://twitter.com/mdo">@mdo</a>.</p>
                     </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-
-
-                            <div class="card">
-                                <div class="card-header">
-                                    <!-- <h3 class="card-title">DataTable with default features</h3> -->
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form @submit.prevent="submitForm">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">พิมพ์ผังบริเวณ</label>
-                                            <input type="text" v-model.trim="payload.searchText" class="form-control"
-                                                placeholder="พิมพ์ผังบริเวณ">
-                                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                                email with anyone else.</small> -->
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">พิมพ์</button>
-                                    </form>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+                </footer>
+            </div>
         </div>
         <!-- /.content-wrapper -->
         <?php include_once "../pages/layout/footer.php"; ?>

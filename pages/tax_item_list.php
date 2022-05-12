@@ -2,9 +2,13 @@
 session_start();
 if(isset($_SESSION["id"])){
  
-    $sql = "SELECT luid,lid,lu_type FROM landused l LIMIT 100"; 
+    $sql = "SELECT luid,lid,lu_type,owner_id,lid,prefix,fname,lname FROM landused ls 
+                   JOIN land_owner lw USING(lid)
+                   JOIN owner ow USING(owner_id) LIMIT 100"; 
     if(isset($_GET["all"])){ 
-         $sql = "SELECT luid,lid,lu_type FROM landused l";
+    $sql = "SELECT luid,lid,lu_type,owner_id,lid,prefix,fname,lname FROM landused ls 
+                   JOIN land_owner lw USING(lid)
+                   JOIN owner ow USING(owner_id)  "; 
     }
  
  $message="ทั้งหมด";
@@ -148,6 +152,7 @@ if(isset($_SESSION["id"])){
                                             <tr>
                                                 <th>Id</th>
                                                 <th>ลำดับที่ดิน</th>
+                                                <th>เจ้าของทรัพย์สิน</th>
                                                 <th>ประเภทการใช้ประโยชน์</th>
                                                 <th>Action</th>
                                             </tr>
@@ -158,8 +163,10 @@ if(isset($_SESSION["id"])){
 
 if(isset($_GET["lu_type"])){
     $lu_type=$_GET["lu_type"];
-    if($lu_type != 0){
-      $sql = "SELECT luid,lid,lu_type FROM landused l WHERE lu_type='$lu_type'";
+    if($lu_type != 0){ 
+          $sql = "SELECT luid,lid,lu_type,owner_id,lid,prefix,fname,lname FROM landused ls 
+                   JOIN land_owner lw USING(lid)
+                   JOIN owner ow USING(owner_id) WHERE lu_type='$lu_type'"; 
     }
       
 
