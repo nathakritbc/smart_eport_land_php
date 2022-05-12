@@ -2,6 +2,8 @@
 session_start();
 if(isset($_SESSION["id"])){
 
+    $data_row=0;
+ include_once "../configs/connect_db.php";
 $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
         FROM building b JOIN owner ow WHERE b.oid = ow.owner_id  LIMIT 100;";
 
@@ -15,6 +17,9 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
         $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
         FROM building b JOIN owner ow WHERE b.oid = ow.owner_id;";
     }
+
+    $result = mysqli_query($conn, $sql);
+    $data_row= mysqli_num_rows($result)
 
  
 
@@ -49,6 +54,8 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
     <div class="wrapper" id="app">
         <!-- Navbar -->
         <?php include_once "../pages/layout/sidebar.php"; ?>
+
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -102,7 +109,7 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                         </div>
 
                                         <div class="col mt-1 text-right">
-                                            <h5>รามทั้งหมด <span class="text-danger">55</span></h5>
+                                            <h5>รามทั้งหมด <span class="text-danger"><?=$data_row;?></span></h5>
                                         </div>
 
                                     </div>
@@ -142,11 +149,11 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                         </thead>
                                         <tbody>
                                             <?php
-                                            include_once "../configs/connect_db.php";
+                                           
 
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+
+if ($data_row > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) { ?>
                                             <tr>
