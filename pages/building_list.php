@@ -4,9 +4,22 @@ if(isset($_SESSION["id"])){
 
 $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
         FROM building b JOIN owner ow WHERE b.oid = ow.owner_id  LIMIT 100;";
+
+    if(isset($_GET["moo"])){
+        $moo=$_GET["moo"];
+        $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id AND b.moo=1 LIMIT 100;";
+    }
+
     if(isset($_GET["all"])){ 
-$sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
         FROM building b JOIN owner ow WHERE b.oid = ow.owner_id;";
+    }
+
+        if(isset($_GET["all"]) AND isset($_GET["moo"])){ 
+        $moo=$_GET["moo"];
+        $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id AND b.moo=1;";
     }
 
      ?>
@@ -69,55 +82,37 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                 <div class="card-header">
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
 
-                                    <div class="row" style="width: 240px;">
-                                        <div class="col">
-                                            <a type="button" href="./building_list.php" class="btn btn-primary">100
-                                                ข้อมูล</a>
-                                        </div>
-                                        <div class="col">
+                                    <div class="row" style="">
+                                        <div class="col-1">
                                             <a type="button" href="./building_list.php?all=req"
                                                 class="btn btn-success">ทั้งหมด</a>
                                         </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="form-inline">
-                                            <div class="input-group" data-widget="sidebar-search">
-                                                <input class="form-control form-control-sidebar" type="search"
-                                                    placeholder="Search" aria-label="Search">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-sidebar">
-                                                        <i class="fas fa-search fa-fw"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="sidebar-search-results">
-                                                <div class="list-group"><a href="#" class="list-group-item">
-                                                        <div class="search-title"><strong
-                                                                class="text-light"></strong>N<strong
-                                                                class="text-light"></strong>o<strong
-                                                                class="text-light"></strong> <strong
-                                                                class="text-light"></strong>e<strong
-                                                                class="text-light"></strong>l<strong
-                                                                class="text-light"></strong>e<strong
-                                                                class="text-light"></strong>m<strong
-                                                                class="text-light"></strong>e<strong
-                                                                class="text-light"></strong>n<strong
-                                                                class="text-light"></strong>t<strong
-                                                                class="text-light"></strong> <strong
-                                                                class="text-light"></strong>f<strong
-                                                                class="text-light"></strong>o<strong
-                                                                class="text-light"></strong>u<strong
-                                                                class="text-light"></strong>n<strong
-                                                                class="text-light"></strong>d<strong
-                                                                class="text-light"></strong>!<strong
-                                                                class="text-light"></strong></div>
-                                                        <div class="search-path"></div>
-                                                    </a></div>
-                                            </div>
+                                        <div class="col-2">
+                                            <a type="button" href="./building_list.php" class="btn btn-primary">100
+                                                ข้อมูล</a>
                                         </div>
+
+
+                                        <div class="col ">
+                                            <form action="#" method="post">
+                                                <div class="input-group">
+                                                    <input type="number" min="0" name="message" placeholder="ค้นหาหมู่"
+                                                        class="form-control">
+                                                    <span class="input-group-append">
+                                                        <button type="button" class="btn btn-primary">ค้นหา</button>
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="col mt-1 text-right">
+                                            <h5>รามทั้งหมด <span class="text-danger">55</span></h5>
+                                        </div>
+
                                     </div>
+
+
+
 
                                     <!-- <div class="row mt-3">
                                         <form @submit.prevent="submitFormReport">
