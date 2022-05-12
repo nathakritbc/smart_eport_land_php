@@ -108,7 +108,7 @@ if(isset($_SESSION["id"])){
                                             <?php
                                             include_once "../configs/connect_db.php";
 $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
-        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id; LIMIT 100";
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id  LIMIT 100";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
