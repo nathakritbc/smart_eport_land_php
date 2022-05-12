@@ -1,9 +1,7 @@
 <?php
 
  @session_start();
- 
   
-
 ?>
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -84,12 +82,12 @@
                                 <p>รายงาน ผท. 1</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>เพิ่มราคาประเมินที่ดิน</p>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -110,7 +108,7 @@
                         </li> -->
                     </ul>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-building"></i>
                         <p>
@@ -150,7 +148,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tags"></i>
