@@ -73,7 +73,7 @@ if(isset($_SESSION["id"])){
 
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row mt-3">
                                         <form @submit.prevent="submitFormReport">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">รายงาน ภ.ป.1
