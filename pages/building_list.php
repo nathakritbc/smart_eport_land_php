@@ -1,6 +1,14 @@
 <?php 
 session_start();
 if(isset($_SESSION["id"])){
+
+$sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id  LIMIT 100;";
+    if(isset($_GET["all"])){ 
+$sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id;";
+    }
+
      ?>
 
 
@@ -63,11 +71,11 @@ if(isset($_SESSION["id"])){
 
                                     <div class="row" style="width: 240px;">
                                         <div class="col">
-                                            <a type="button" href="./tax_item_list.php" class="btn btn-primary">100
+                                            <a type="button" href="./building_list.php" class="btn btn-primary">100
                                                 ข้อมูล</a>
                                         </div>
                                         <div class="col">
-                                            <a type="button" href="./tax_item_list.php?all=req"
+                                            <a type="button" href="./building_list.php?all=req"
                                                 class="btn btn-success">ทั้งหมด</a>
                                         </div>
 
@@ -108,8 +116,7 @@ if(isset($_SESSION["id"])){
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
-        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id  LIMIT 100";
+
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
