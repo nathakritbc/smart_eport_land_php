@@ -92,8 +92,8 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                         <div class="col ">
                                             <form action="" method="get">
                                                 <div class="input-group">
-                                                    <input type="number" min="0" name="moo" placeholder="ค้นหาหมู่"
-                                                        class="form-control">
+                                                    <input type="number" min="0" name="moo" required
+                                                        placeholder="ค้นหาหมู่" class="form-control">
                                                     <span class="input-group-append">
                                                         <button type="submit" class="btn btn-primary">ค้นหา</button>
                                                     </span>
