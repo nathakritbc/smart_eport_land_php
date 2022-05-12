@@ -102,6 +102,7 @@ if(isset($_SESSION["id"])){
                                                 <th>build_year</th>
                                                 <th>address</th>
                                                 <th>moo</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
