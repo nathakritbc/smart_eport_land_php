@@ -89,7 +89,7 @@ $sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b
                                                 <input type="text" required v-model.trim="textReport"
                                                     class="form-control" placeholder="รายงาน ภ.ป.1">
                                                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                                email with anyone else.</small> -->
+                                                email with anyone else.</small>  -->
                                             </div>
                                             <button type="submit" class="btn btn-primary">พิมพ์</button>
                                         </form>
