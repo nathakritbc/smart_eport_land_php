@@ -179,6 +179,7 @@ if (mysqli_num_rows($result) > 0) {
                                             <tr>
                                                 <td><?=$row["luid"]?></td>
                                                 <td><?=$row["lid"]?></td>
+                                                <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
                                                 <td>
                                                     <?php   
                                                             $luType = $row["lu_type"];
