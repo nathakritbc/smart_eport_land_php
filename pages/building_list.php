@@ -60,17 +60,65 @@ if(isset($_SESSION["id"])){
                             <div class="card">
                                 <div class="card-header">
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
-                                    <form @submit.prevent="submitFormReport">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">รายงาน ภ.ป.1
-                                                (ใส่พยัญชนะเเรกของชื่อเจ้าของป้าย)</label>
-                                            <input type="text" required v-model.trim="textReport" class="form-control"
-                                                placeholder="รายงาน ภ.ป.1">
-                                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                                email with anyone else.</small> -->
+
+                                    <div class="row" style="width: 460px;">
+                                        <div class="col">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    ประเภทการใช้ประโยชน์ที่ดิน
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=0">1 :
+                                                        ทั้งหมด
+                                                    </a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=1">1 :
+                                                        เกษตรกรรม
+                                                    </a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=2">2 :
+                                                        บ้านหลังหลัก
+                                                        2(1)</a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=6">6 : บ้าน
+                                                        2(2)</a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=7">7 : บ้าน
+                                                        2(3)</a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=3">3 : อื่น
+                                                        ๆ</a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=4">4 :
+                                                        รกร้าง
+                                                        ว่างเปล่า</a>
+                                                    <a class="dropdown-item" href="tax_item_list.php?lu_type=5">5 :
+                                                        หลายประเภท</a>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <button type="submit" class="btn btn-primary">พิมพ์</button>
-                                    </form>
+                                        <div class="col">
+                                            <a type="button" href="./tax_item_list.php" class="btn btn-primary">100
+                                                ข้อมูล</a>
+                                        </div>
+                                        <div class="col">
+                                            <a type="button" href="./tax_item_list.php?all=req"
+                                                class="btn btn-success">ทั้งหมด</a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <form @submit.prevent="submitFormReport">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">รายงาน ภ.ป.1
+                                                    (ใส่พยัญชนะเเรกของชื่อเจ้าของป้าย)</label>
+                                                <input type="text" required v-model.trim="textReport"
+                                                    class="form-control" placeholder="รายงาน ภ.ป.1">
+                                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                                email with anyone else.</small> -->
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">พิมพ์</button>
+                                        </form>
+                                    </div>
+
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
