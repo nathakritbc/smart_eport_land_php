@@ -78,28 +78,37 @@ if(isset($_SESSION["id"])){
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Owner Id</th>
+                                                <th>b_code</th>
+                                                <th>parcel_code</th>
                                                 <th>ชื่อเจ้าของป้าย</th>
-                                                <th>ข้อความภายในป้าย</th>
-                                                <th>รหัสป้าย</th>
-                                                <th>เปลี่ยนเจ้าของ </th>
+                                                <th>b_type</th>
+                                                <th>b_material</th>
+                                                <th>build_year</th>
+                                                <th>address</th>
+                                                <th>moo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include_once "../configs/connect_db.php";
-$sql = "SELECT id,owner_id,annual,s_code,s_name,prefix,fname,lname FROM signboard s JOIN owner o USING(owner_id);";
+$sql = "SELECT b.bid,b.b_code,b.parcel_code,b.b_type,b.b_material,b.build_year,b.address,b.moo,b.oid,ow.owner_id,ow.prefix,ow.fname,ow.lname 
+        FROM building b JOIN owner ow WHERE b.oid = ow.owner_id;";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) { ?>
                                             <tr>
-                                                <td><?=$row["id"]?></td>
-                                                <td><?=$row["owner_id"]?></td>
+                                                <td><?=$row["bid"]?></td>
+                                                <td><?=$row["b_code"]?></td>
+                                                <td><?=$row["parcel_code"]?></td>
                                                 <td><?=$row["prefix"]?><?=$row["fname"]?> <?=$row["lname"]?></td>
-                                                <td><?=$row["s_name"]?></td>
-                                                <td><?=$row["s_code"]?></td>
+                                                <td><?=$row["b_type"]?></td>
+                                                <td><?=$row["b_material"]?></td>
+                                                <td><?=$row["build_year"]?></td>
+                                                <td><?=$row["address"]?></td>
+                                                <td><?=$row["moo"]?></td>
+
                                                 <td>
                                                     <a type="button" class="btn btn-primary"
                                                         href="http://127.0.0.1:85/property/sign/<?=$row["id"]?>"
