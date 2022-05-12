@@ -61,7 +61,7 @@ if(isset($_SESSION["id"])){
                                 <div class="card-header">
                                     <!-- <h3 class="card-title">DataTable with default features</h3> -->
 
-                                    <div class="row" style="width: 200px;">
+                                    <div class="row" style="width: 230px;">
                                         <div class="col">
                                             <a type="button" href="./tax_item_list.php" class="btn btn-primary">100
                                                 ข้อมูล</a>
