@@ -23,6 +23,20 @@ if(isset($_SESSION["id"])){ ?>
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
+
+    <style>
+    .preview-img-overlay {
+        background-image: url("../dist/img/road-g9246d654d_1920_1.jpg");
+        justify-content: center;
+        align-items: center;
+        background-attachment: scroll;
+        background-color: transparent;
+        background-size: cover;
+        position: relative;
+        opacity: 0.9;
+    }
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -33,9 +47,7 @@ if(isset($_SESSION["id"])){ ?>
 
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper text-center text-white" style="background-image: url('../dist/img/pexels-luis-del-río-15286.jpg'); background-repeat: no-repeat;
-                    background-attachment: fixed;
-                    background-position: center; opacity: 0.5; linear-gradient(black, black);">
+        <div class="content-wrapper text-center text-white preview-img-overlay">
             <div class="cover-container d-flex h-100 p-3 mx-auto flex-column ">
                 <main role="main" class="inner cover">
                     <h1 class="cover-heading" style="margin-top: 9rem;"><?=$_SESSION["m_name"];?></h1>
